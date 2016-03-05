@@ -1,0 +1,22 @@
+{
+  "name": "bitmap_transformer",
+  "version": "0.1.0",
+  "description": "Week 1 assignment to make a bitmap transformer",
+  "main": "transformer.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/samanthaprince/bitmapTransformer.git"
+  },
+  "author": "Samantha",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/samanthaprince/bitmapTransformer/issues"
+  },
+  "homepage": "https://github.com/samanthaprince/bitmapTransformer#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1"
+  }
+}
