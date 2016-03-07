@@ -12,18 +12,12 @@ function metaData () {
   bitmapData.imageStart = bitmap.readUInt32LE(10);
   bitmapData.imageWidth = bitmap.readUInt32LE(18);
   bitmapData.paletteSize = bitmap.readUInt32LE(46);
-  bitmapData.paletteStart = (bitmapData.imageStart - bitmapData.paletteColors*4);
+  bitmapData.paletteStart = (bitmapData.imageStart - bitmapData.paletteSize*4);
   console.log(bitmapData);
 }
 metaData();
 
-//create function to determine if palette or non palette bitmap
-
-// var newString = bitmap.toString('hex', 54, 182);
-// console.log(newString);
-//
-// var colorArray = newString.match(/.{1,8}/g);
-// console.log(colorArray);
+//TODO:create function to determine if palette or non palette bitmap
 
 //Invert the colors on the bitmap
 var invert = function(){
@@ -33,7 +27,6 @@ var invert = function(){
   fs.writeFileSync(__dirname + '/images/newInvertPBitmap.bmp', bitmap);
 };
 
-
 //Greyscale the bitmap with white instead of black
 var greyscale = function() {
   for (var i = 54; i < 310; i++) {
@@ -41,7 +34,6 @@ var greyscale = function() {
   }
   fs.writeFileSync(__dirname + '/images/newGreyPBitmap.bmp', bitmap);
 };
-
 
 // Randomly change the colors in the bitmap with a math.random
 var random = function () {
@@ -51,6 +43,7 @@ var random = function () {
   fs.writeFileSync(__dirname + '/images/newRandomPBitmap.bmp', bitmap);
 };
 
+// Color remove function, takes one parameter and removes the specified color
 var colorRemove = function (colorOption){
   for (var i = 54; i < 310; i+=4) {
     if (colorOption == 'blue') {
@@ -64,23 +57,7 @@ var colorRemove = function (colorOption){
   fs.writeFileSync(__dirname + '/images/' + 'new' + colorOption + 'PBitmap.bmp', bitmap);
 };
 
-// remove blue
-// for (var i = 54; i < 310; i+=4) {
-//   bitmap[i] = bitmap[i]*0;
-// }
-
-//remove green
-// for (var i = 54; i < 310; i+=4) {
-//   bitmap[i+1] = bitmap[i]*0;
-// }
-
-//remove red
-// for (var i = 54; i < 310; i+=4) {
-//   bitmap[i+2] = bitmap[i]*0;
-// }
-
-// fs.writeFileSync(__dirname + '/images/newPBitmap.bmp', bitmap);
-
+// exports functions
 exports.bitmap = bitmap;
 exports.invert = invert;
 exports.random = random;
