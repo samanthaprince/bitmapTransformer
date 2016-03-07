@@ -7,7 +7,15 @@
 4. Turn the transformed object back into a buffer.
 5. Write that buffer to a new file.
 
-Instructions to run program:
-When repo is downloaded, run index.js from root and choose: invert, greyscale, random colorremove blue, colorremove red or colorremove green.  New files should be in images folder with new prefix.
+# Instructions to run program:
+When repo is downloaded, run node index.js from root with one of the following:
+- invert
+- greyscale
+- random
+- colorremove blue  
+- colorremove red
+- colorremove green
+
+New files should be in images folder with new prefix.
 
 Worked with [Mikleane Chouinard](https://github.com/mikleane) and [Joshua Haan](https://github.com/haanj)
