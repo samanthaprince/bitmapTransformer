@@ -25,36 +25,23 @@ describe('Test the metadata function', function(){
   });
 });
 
-describe('greyscale function', function(){
-  it('takes an index, subtracts it from 255, and returns a new index', function(){
+describe('Test the greyscale function', function(){
+  it('should take an index, subtracts it from 255, and return a new index', function(){
     var sampleArray = [0,0];
     expect(transform.greyscale(sampleArray,0,2)).to.eql([255,254]);
   });
 });
 
-describe('invert function', function(){
-  store bitmpap[i] in a variable
-  frun the funciton
-  it('takes ', function(){
-    expect(''what bitmapi was to be equal to bitmap i - 255);
+// describe('Test the invert function', function(){
+//
+//   it('takes each index in the color array ', function(){
+//     expect(transform.invert(bitmap[i])).to.eql(255-bitmap[i]);
+//   });
+// });
+
+describe('Test the random function', function(){
+  it('Should randomly assign a new value to the colors in the color array ', function(){
+    var sampleArray = [0,0];
+    expect(transform.random(sampleArray,0,2)).to.not.equal([0,0]);
   });
 });
-
-// describe('random function', function(){
-//   it('takes', function(){
-//     expect('');
-//   });
-// });
-// describe('test the random function', function() {
-//   beforeEach(function(done) {
-//     oldBitmap = fs.readFileSync(__dirname + '/images/palette-bitmap.bmp')
-//     oldBitmap.transform.random
-//     done()
-//     it('should randomly change one color in the palette to another color', function(){
-//       oldBitmap = fs.readFileSync(__dirname + '/images/palette-bitmap.bmp')
-//       newBitmap = fs.readFileSync(__dirname + '/images/newrandomundefinedPBitmap.bmp')
-//       expect();
-//
-//   })
-//   });
-// });
