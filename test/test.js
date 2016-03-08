@@ -32,12 +32,12 @@ describe('Test the greyscale function', function(){
   });
 });
 
-// describe('Test the invert function', function(){
-//
-//   it('takes each index in the color array ', function(){
-//     expect(transform.invert(bitmap[i])).to.eql(255-bitmap[i]);
-//   });
-// });
+describe ('Test invert color function', function() {
+  it('should take in an index value, subtracts it from 255, returns a new value for that index.', function(){
+    var sampleArray = [0,10,50];
+    expect(transform.invert(sampleArray, 0, 3)).to.eql([255,245,205]);
+  });
+});
 
 describe('Test the random function', function(){
   it('Should randomly assign a new value to the colors in the color array ', function(){
